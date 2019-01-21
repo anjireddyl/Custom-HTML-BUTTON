@@ -1,0 +1,68 @@
+
+  <style>
+        .btn {
+        padding: 7px;
+        background-color :blue;
+        color:white;
+        border-radius: 10px;
+        margin-top: 2px;
+        cursor: pointer;
+        
+    }
+ .btn:hover{
+     background-color: rgb(68, 167, 23);
+ }
+
+ #te{
+     margin-left: 5px;
+     font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+     color: brown;
+ }
+
+    </style>
+
+</head>
+
+<body>
+
+
+    <input type="file" id="wwe" hidden="hidden">
+
+    <button id="rt" class="btn btn-warning btn-sm"><i style="font-size: 30px; color:violet;" class="fas fa-igloo"></i></button>
+    <span id="te">No File Choosen</span>
+
+
+
+
+
+    <script>
+
+        var uy = document.getElementById("wwe");
+        var op = document.getElementById("rt");
+        var qw = document.getElementById("te");
+
+
+
+        op.addEventListener("click", function () {
+            uy.click();
+        })
+
+
+        uy.addEventListener("change", function () {
+            if (uy.value) {
+                qw.innerHTML = uy.value.match(/[\/\\]([\w\d\s\.\-\(\)]+)$/)[1];
+
+            } else {
+                qw.innerHTML = "No File Chosen Yet.";
+            }
+        });
+
+
+
+
+
+
+
+    </script>
+
+</body>
